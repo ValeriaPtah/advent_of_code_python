@@ -1,7 +1,6 @@
-import os
 import re
 
-from definitions import ROOT_DIR
+from util.helper import open_file
 
 str_to_int_dict = {
     "one": "1",
@@ -17,9 +16,8 @@ str_to_int_dict = {
 
 
 def count_calibration(calibration_rel_file_path):
-    calibration_file_path = os.path.join(ROOT_DIR, calibration_rel_file_path)
+    file = open_file(calibration_rel_file_path)
     calibration_number = 0
-    file = open(calibration_file_path)
     for line in file:
         abc_line = replace_int_with_str(line)
         line_number = get_line_number(abc_line)
@@ -47,4 +45,4 @@ def get_line_number(line):
     return int(str_to_int_dict.get(first_number)) * 10 + int(str_to_int_dict.get(last_number))
 
 
-print(count_calibration("problems/day1/inp1.txt"))
+print(count_calibration("problems/day1_calibration_number/input.txt"))
