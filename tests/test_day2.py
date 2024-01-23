@@ -1,8 +1,7 @@
 from definitions import SOLUTION_PART1, SOLUTION_PART2
-from util.helper import get_solutions_file_for_day, get_full_input, get_test_input_part1
+from util.helper import get_solution_file_for_day, get_full_input, get_test_input_part1, get_solution_function_for_day
 
 DAY = "day2_cube_conundrum"
-SOLUTION_FUNCTION = "cube_conundrum"
 
 
 def test_part1_init():
@@ -23,9 +22,9 @@ def test_part2_final():
 
 def run_test(solutions_file, problem_input, correct_number):
     module = get_day_src(solutions_file)
-    test_method = getattr(module, SOLUTION_FUNCTION)
-    assert test_method(problem_input) == correct_number
+    test_function = getattr(module, get_solution_function_for_day(DAY))
+    assert test_function(problem_input) == correct_number
 
 
 def get_day_src(solutions_file):
-    return get_solutions_file_for_day(DAY, solutions_file)
+    return get_solution_file_for_day(DAY, solutions_file)

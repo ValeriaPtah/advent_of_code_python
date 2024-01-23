@@ -1,4 +1,5 @@
 import os
+import re
 from importlib import import_module
 
 from definitions import ROOT_DIR, SOLUTIONS_MODULE
@@ -13,12 +14,16 @@ def get_project_file_path(rel_file_path):
     return os.path.join(ROOT_DIR, rel_file_path)
 
 
-def remove_non_numerical(line):
-    return list(filter(lambda i: i.isdigit(), line))
+def get_numerical(line):
+    return list(map(int, filter(lambda i: i.isdigit(), line)))
 
 
-def get_solutions_file_for_day(day_folder, solution_file):
+def get_solution_file_for_day(day_folder, solution_file):
     return import_module(SOLUTIONS_MODULE + '.' + day_folder + '.' + solution_file)
+
+
+def get_solution_function_for_day(day_folder_name):
+    return re.sub(r'day(\d+)_', '', day_folder_name)
 
 
 def get_full_input(day):

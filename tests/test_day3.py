@@ -1,24 +1,23 @@
 from definitions import SOLUTION_PART1, SOLUTION_PART2
-from util.helper import get_solution_file_for_day, get_full_input, get_test_input_part1, get_test_input_part2, \
-    get_solution_function_for_day
+from util.helper import get_solution_file_for_day, get_full_input, get_test_input_part1, get_solution_function_for_day
 
-DAY = "day1_calibration_number"
+DAY = "day3_gear_ratios"
 
 
 def test_part1_init():
-    run_test(SOLUTION_PART1, get_test_input_part1(DAY), 142)
+    run_test(SOLUTION_PART1, get_test_input_part1(DAY), 4361)
 
 
 def test_part2_init():
-    run_test(SOLUTION_PART2, get_test_input_part2(DAY), 281)
+    run_test(SOLUTION_PART2, get_test_input_part1(DAY), 467835)
 
 
 def test_part1_final():
-    run_test(SOLUTION_PART1, get_full_input(DAY), 55386)
+    run_test(SOLUTION_PART1, get_full_input(DAY), 525119)
 
 
 def test_part2_final():
-    run_test(SOLUTION_PART2, get_full_input(DAY), 54824)
+    run_test(SOLUTION_PART2, get_full_input(DAY), 76504829)
 
 
 def run_test(solutions_file, problem_input, correct_number):

@@ -1,15 +1,15 @@
-from util.helper import remove_non_numerical, open_file
+from util.helper import get_numerical, open_file
 
 
-def count_calibration(calibration_rel_file_path):
+def calibration_number(calibration_rel_file_path):
     file = open_file(calibration_rel_file_path)
-    calibration_number = 0
+    calibr_number = 0
     for x in file:
-        numbers = remove_non_numerical(x)
-        line_number = int(numbers[0]) * 10 + int(numbers[-1])
-        calibration_number += line_number
+        numbers = get_numerical(x)
+        line_number = numbers[0] * 10 + numbers[-1]
+        calibr_number += line_number
     file.close()
-    return calibration_number
+    return calibr_number
 
 
-print(count_calibration("problems/day1_calibration_number/input.txt"))
+print(calibration_number("problems/day1_calibration_number/input.txt"))

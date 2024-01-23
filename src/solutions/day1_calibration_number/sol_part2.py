@@ -15,15 +15,15 @@ str_to_int_dict = {
 }
 
 
-def count_calibration(calibration_rel_file_path):
+def calibration_number(calibration_rel_file_path):
     file = open_file(calibration_rel_file_path)
-    calibration_number = 0
+    calibr_number = 0
     for line in file:
         abc_line = replace_int_with_str(line)
         line_number = get_line_number(abc_line)
-        calibration_number += line_number
+        calibr_number += line_number
     file.close()
-    return calibration_number
+    return calibr_number
 
 
 def replace_int_with_str(line):
@@ -45,4 +45,4 @@ def get_line_number(line):
     return int(str_to_int_dict.get(first_number)) * 10 + int(str_to_int_dict.get(last_number))
 
 
-print(count_calibration("problems/day1_calibration_number/input.txt"))
+print(calibration_number("problems/day1_calibration_number/input.txt"))
