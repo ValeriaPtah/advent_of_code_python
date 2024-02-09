@@ -35,4 +35,7 @@ def get_test_input_part1(day):
 
 
 def get_test_input_part2(day):
-    return "problems/{day}/test_input2.txt".format(day=day)
+    if os.path.isfile("problems/{day}/test_input2.txt".format(day=day)):
+        return "problems/{day}/test_input2.txt".format(day=day)
+    else:
+        return get_test_input_part1(day)

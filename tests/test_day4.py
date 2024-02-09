@@ -2,23 +2,23 @@ from definitions import SOLUTION_PART1, SOLUTION_PART2
 from util.helper import get_solution_file_for_day, get_full_input, get_test_input_part1, get_solution_function_for_day, \
     get_test_input_part2
 
-DAY = "day3_gear_ratios"
+DAY = "day4_scratchcards"
 
 
 def test_part1_init():
-    run_test(SOLUTION_PART1, get_test_input_part1(DAY), 4361)
+    run_test(SOLUTION_PART1, get_test_input_part1(DAY), 13)
 
 
 def test_part2_init():
-    run_test(SOLUTION_PART2, get_test_input_part2(DAY), 467835)
+    run_test(SOLUTION_PART2, get_test_input_part2(DAY), 30)
 
 
 def test_part1_final():
-    run_test(SOLUTION_PART1, get_full_input(DAY), 525119)
+    run_test(SOLUTION_PART1, get_full_input(DAY), 18619)
 
 
 def test_part2_final():
-    run_test(SOLUTION_PART2, get_full_input(DAY), 76504829)
+    run_test(SOLUTION_PART2, get_full_input(DAY), 0)
 
 
 def run_test(solutions_file, problem_input, correct_number):

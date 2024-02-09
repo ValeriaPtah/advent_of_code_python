@@ -1,5 +1,6 @@
 from definitions import SOLUTION_PART1, SOLUTION_PART2
-from util.helper import get_solution_file_for_day, get_full_input, get_test_input_part1, get_solution_function_for_day
+from util.helper import get_solution_file_for_day, get_full_input, get_test_input_part1, get_solution_function_for_day, \
+    get_test_input_part2
 
 DAY = "day2_cube_conundrum"
 
@@ -9,7 +10,7 @@ def test_part1_init():
 
 
 def test_part2_init():
-    run_test(SOLUTION_PART2, get_test_input_part1(DAY), 2286)
+    run_test(SOLUTION_PART2, get_test_input_part2(DAY), 2286)
 
 
 def test_part1_final():
